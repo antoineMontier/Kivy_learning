@@ -1,5 +1,8 @@
 <MyGrid>
-    #python_one: label_one
+    python_polynome_display: label_polynome_display
+    python_polynome_min: label_polynome_min_display
+    python_polynome_max: label_polynome_max_display
+    python_polynome_pace: label_polynome_pace_display
     GridLayout:
         size:root.width, root.height
         rows:2
@@ -11,26 +14,31 @@
                 Label:
                     text:"MIN"
                 Label:
-                    #id
+                    id:label_polynome_min_display
                     text:"-"
                 Button:
                     text:"set"
-                    #on_press
+                    on_press:root.min_uptdate()
                 TextInput:
+                    id:label_polynome_min_display
                     multiline:False
+                    input_filter:"float"
             GridLayout:#AX
                 cols:2
                 rows:2
                 Label:
                     text:"MAX"
                 Label:
-                    #id
+                    id:label_polynome_max_display
                     text:"-"
                 Button:
                     text:"set"
-                    #on_press
+                    on_press:root.max_uptdate()
                 TextInput:
+                    id:label_polynome_max_display
                     multiline:False
+                    input_filter:"float"
+                    
             GridLayout:#PACE
                 cols:2
                 rows:2
@@ -41,15 +49,17 @@
                     text:"-"
                 Button:
                     text:"set"
-                    #on_press
+                    on_press:root.pace_uptdate()
                 TextInput:
+                    id:label_polynome_pace_display
                     multiline:False
+                    input_filter:"float"
             GridLayout:#Polynom
                 rows:2
                 Label:
                     text:"Polynom"
                 Label:
-                    #id
+                    id:label_polynome_display
                     text:"-"
         GridLayout:#Pricipal grid layout
             rows:6
@@ -138,7 +148,3 @@
                     Label:
                         #id
                         text:"-"
-
-
-
-
