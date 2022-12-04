@@ -1,0 +1,144 @@
+<MyGrid>
+    #python_one: label_one
+    GridLayout:
+        size:root.width, root.height
+        rows:2
+        GridLayout:#first row containing MIN, MAX, PACE, POLYNOM(only display)
+            cols:4
+            GridLayout:#MIN
+                cols:2
+                rows:2
+                Label:
+                    text:"MIN"
+                Label:
+                    #id
+                    text:"-"
+                Button:
+                    text:"set"
+                    #on_press
+                TextInput:
+                    multiline:False
+            GridLayout:#AX
+                cols:2
+                rows:2
+                Label:
+                    text:"MAX"
+                Label:
+                    #id
+                    text:"-"
+                Button:
+                    text:"set"
+                    #on_press
+                TextInput:
+                    multiline:False
+            GridLayout:#PACE
+                cols:2
+                rows:2
+                Label:
+                    text:"PACE"
+                Label:
+                    #id
+                    text:"-"
+                Button:
+                    text:"set"
+                    #on_press
+                TextInput:
+                    multiline:False
+            GridLayout:#Polynom
+                rows:2
+                Label:
+                    text:"Polynom"
+                Label:
+                    #id
+                    text:"-"
+        GridLayout:#Pricipal grid layout
+            rows:6
+            GridLayout:#polynom modifications
+                cols:3
+                Label:
+                    text:"Polynom :"
+                TextInput:
+                    multiline:False
+                Button:
+                    text:"ok"
+                    #on_press
+            GridLayout:#derivate and integral display
+                rows:2
+                cols:2
+                Label:
+                    text:"derivate"
+                Label:
+                    #id
+                    text:"-"
+                Label:
+                    text:"primitive"
+                Label:
+                    #id
+                    text:"-"
+            GridLayout:#tangent calculation
+                cols: 4
+                Label:
+                    text:"tangent at a ="
+                TextInput:
+                    multiline:False
+                Button:
+                    text:"OK"
+                    #on_press
+                Label:
+                    #id
+                    text:"-"
+            GridLayout:#integral calculation
+                cols:6
+                Label:
+                    text:"integral\nbetween"
+                TextInput:
+                    multiline:False
+                Label:
+                    text:"and"
+                TextInput:
+                    multiline:False
+                Button:
+                    text:"OK"
+                    #on_press
+                Label:
+                    #id
+                    text:"-"
+            GridLayout:#roots display
+                cols:2
+                Label:
+                    text:"roots"
+                Label:
+                    #id
+                    text:"-"
+            GridLayout:#im, even and uneven
+                cols:3
+                GridLayout:
+                    rows:2
+                    GridLayout:
+                        cols:2
+                        TextInput:
+                            multiline: False
+                        Button:
+                            text:"Get image"
+                            #on_press
+                    Label:
+                        #id
+                        text:"-"
+                GridLayout:
+                    rows:2
+                    Label:
+                        text:"even"
+                    Label:
+                        #id
+                        text:"-"
+                GridLayout:
+                    rows:2
+                    Label:
+                        text:"uneven"
+                    Label:
+                        #id
+                        text:"-"
+
+
+
+

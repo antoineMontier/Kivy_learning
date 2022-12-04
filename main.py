@@ -4,22 +4,20 @@ from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.widget import Widget
 
 kivy.require('1.9.0')
 
-class Myroot(BoxLayout):
-    def __init__(self, **kwargs):
-        super(Myroot, self).__init__(**kwargs)
+class MyGrid(Widget):
+    def print_a_number(self):
+        print(random.randint(0, 100))
+    pass
 
-        
-        
-    def generate_number(self):
-        self.python_random.text = str(random.randint(0, 10))
-
-
-class RandomNumber(App):
+class MyApp(App):
     def build(self):
-        return Myroot()
+        return MyGrid()
 
-rn = RandomNumber()
-rn.run()
+    
+
+
+MyApp().run()
