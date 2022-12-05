@@ -9,6 +9,15 @@
     python_polynome_pace_out: label_polynome_pace_out 
     python_polynome_tangent_in: label_polynome_tangent_in
     python_polynome_tangent_out: label_polynome_tangent_out
+    python_polynome_roots_out: label_roots
+    python_polynome_im_in: label_polynome_im_in
+    python_polynome_im_out: label_polynome_im_out
+    python_polynome_derivate_out: label_polynome_derivate_out
+    python_polynome_primitive_out: label_polynome_primitive_out
+    python_polynome_a_in: label_polynome_a_in
+    python_polynome_b_in: label_polynome_b_in
+    python_polynome_integral_out: label_polynome_integral_out
+
     GridLayout:
         size:root.width, root.height
         rows:2
@@ -83,12 +92,12 @@
                 Label:
                     text:"derivate"
                 Label:
-                    #id
+                    id:label_polynome_derivate_out
                     text:"-"
                 Label:
                     text:"primitive"
                 Label:
-                    #id
+                    id:label_polynome_primitive_out
                     text:"-"
             GridLayout:#tangent calculation
                 cols: 4
@@ -109,23 +118,32 @@
                 Label:
                     text:"integral\nbetween"
                 TextInput:
+                    id:label_polynome_a_in
                     multiline:False
+                    input_filter:"float"
                 Label:
                     text:"and"
                 TextInput:
+                    id:label_polynome_b_in
                     multiline:False
+                    input_filter:"float"
                 Button:
                     text:"OK"
-                    #on_press
+                    on_press:root.integral_calculation()
                 Label:
-                    #id
+                    id:label_polynome_integral_out
                     text:"-"
             GridLayout:#roots display
-                cols:2
+                cols:3
                 Label:
+                    size_hint:0.2, 0.2
                     text:"roots"
+                Button:
+                    size_hint:0.3, 0.2
+                    text:"Calculate"
+                    on_press:root.show_roots()
                 Label:
-                    #id
+                    id:label_roots
                     text:"-"
             GridLayout:#im, even and uneven
                 cols:3
@@ -134,12 +152,14 @@
                     GridLayout:
                         cols:2
                         TextInput:
+                            id:label_polynome_im_in
                             multiline: False
+                            input_filter:'float'
                         Button:
                             text:"Get image"
-                            #on_press
+                            on_press:root.evaluation()
                     Label:
-                        #id
+                        id:label_polynome_im_out
                         text:"-"
                 GridLayout:
                     rows:2

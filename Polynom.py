@@ -108,6 +108,12 @@ class Polynom:
             for i in range(self.length()):
                 res += self._monoms.get(i).get_coef()*pow(x, self._monoms.get(i).get_pow())
             return res
+    def integral(self, x, y):
+        if(self.length() == 0):
+            return 0
+        else:
+            return self.primitive().evaluate(y) - self.primitive().evaluate(x)    
+
     def tangent(self, a):#y = f'(a)(x-a) + f(a)
         res = Polynom()
         if(self.length() == 0):
