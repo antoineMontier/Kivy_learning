@@ -159,21 +159,20 @@ class MyGrid(Widget):
 
 class MyApp(App):
 
-    button = [0.411, 0.47, 0.68]
-    on_bg_font_color = [0, 1, 0, 1]
-    on_button_font_color = [1, 1, 0, 1]
-    on_layout_font_color = [1, 0, 1, 1]
-    label_color = [0, 0, 0, 1]
-    text_input_fg_color = [0, 1, 0.5, 1]
-    text_input_bg_color = [0.5, 0, 0.5, 1]
-    button_color = [0.5, 0, 0.5, 1]
+    on_bg_font_color = [255/255, 222/255, 112/255, 1]
+    on_button_font_color = [9/255, 11/255, 10/255, 1]
+    on_layout_font_color = [255/255, 222/255, 112/255, 1]
+    label_color = [28/255, 34/255, 31/255, 1]
+    text_input_fg_color = [214/255, 82/255, 10/255, 1]
+    text_input_bg_color = [28/255, 34/255, 31/255, 1]
+    button_color = [214/255, 82/255, 10/255, 1]
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
 
     def build(self):
-        Window.clearcolor = (1, 0, 1, 1)#bg color
+        Window.clearcolor = 9/255, 11/255, 10/255, 1#bg color
         return MyGrid()
     
 

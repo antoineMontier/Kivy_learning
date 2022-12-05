@@ -38,7 +38,7 @@
                         id:label_polynome_min_out
                         color:app.on_layout_font_color
                         text:"Min"
-                        background_color: 0, 1, 0, 1
+                        background_color: 28/255, 34/255, 31/255, 1
                         canvas.before:
                             Color:
                                 rgba: self.background_color
@@ -52,6 +52,7 @@
                     RoundedButton:
                         color:app.on_button_font_color
                         text:"set"
+                        bold:True
                         on_press:root.min_uptdate()
                     TextInput:
                         id:label_polynome_min_in
@@ -84,6 +85,7 @@
                     RoundedButton:
                         color:app.on_button_font_color
                         text:"set"
+                        bold:True
                         on_press:root.max_uptdate()
                     TextInput:
                         id:label_polynome_max_in
@@ -118,6 +120,7 @@
                     RoundedButton:
                         color:app.on_button_font_color
                         text:"set"
+                        bold:True
                         on_press:root.pace_uptdate()
                     TextInput:    
                         id:label_polynome_pace_in
@@ -151,6 +154,7 @@
                     cols:1
                     padding:(5, 30, 5, 30)
                     RoundedButton:
+                        bold:True
                         color:app.on_button_font_color
                         text:"OK"
                         #background_color:app.button
@@ -219,6 +223,7 @@
                         foreground_color: app.text_input_fg_color
                         background_color: app.text_input_bg_color
                     RoundedButton:
+                        bold:True
                         color:app.on_button_font_color
                         text:"OK"
                         on_press:root.tangent_uptdate()
@@ -267,6 +272,7 @@
                         foreground_color: app.text_input_fg_color
                         background_color: app.text_input_bg_color
                     RoundedButton:
+                        bold:True
                         color:app.on_button_font_color
                         size_hint:{.5, 1}
                         text:"OK"
@@ -311,6 +317,7 @@
                                     pos: self.pos
                                     radius: [15]
                     RoundedButton:
+                        bold:True
                         color:app.on_button_font_color
                         size_hint:0.1, 1
                         text:"Calc."
@@ -343,8 +350,9 @@
                             size_hint:{.5, 1}
                             id:label_polynome_im_out
                             color:app.on_bg_font_color
-                            text:") = -"
+                            text:") =   -"
                         RoundedButton:
+                            bold:True
                             color:app.on_button_font_color
                             size_hint:{.3, .2}
                             text:"Go"
@@ -357,7 +365,7 @@
                         Label:
                             id:label_polynome_even_out
                             color:app.on_layout_font_color
-                            text:"even: -"
+                            text:"even :   -"
                             background_color: app.label_color
                             canvas.before:
                                 Color:
@@ -374,7 +382,7 @@
                         Label:
                             id:label_polynome_uneven_out
                             color:app.on_layout_font_color
-                            text:"uneven: -"
+                            text:"uneven :   -"
                             background_color: app.label_color
                             canvas.before:
                                 Color:
