@@ -1,8 +1,11 @@
 <MyGrid>
-    python_polynome_display: label_polynome_display
-    python_polynome_min: label_polynome_min_display
-    python_polynome_max: label_polynome_max_display
-    python_polynome_pace: label_polynome_pace_display
+    python_polynome_display: label_polynome_in
+    python_polynome_min: label_polynome_min_in
+    python_polynome_max: label_polynome_max_in
+    python_polynome_pace: label_polynome_pace_in
+    python_polynome_min_out: label_polynome_min_out 
+    python_polynome_max_out: label_polynome_max_out 
+    python_polynome_pace_out: label_polynome_pace_out 
     GridLayout:
         size:root.width, root.height
         rows:2
@@ -14,13 +17,13 @@
                 Label:
                     text:"MIN"
                 Label:
-                    id:label_polynome_min_display
+                    id:label_polynome_min_out
                     text:"-"
                 Button:
                     text:"set"
                     on_press:root.min_uptdate()
                 TextInput:
-                    id:label_polynome_min_display
+                    id:label_polynome_min_in
                     multiline:False
                     input_filter:"float"
             GridLayout:#AX
@@ -29,13 +32,13 @@
                 Label:
                     text:"MAX"
                 Label:
-                    id:label_polynome_max_display
+                    id:label_polynome_max_out
                     text:"-"
                 Button:
                     text:"set"
                     on_press:root.max_uptdate()
                 TextInput:
-                    id:label_polynome_max_display
+                    id:label_polynome_max_in
                     multiline:False
                     input_filter:"float"
                     
@@ -45,13 +48,13 @@
                 Label:
                     text:"PACE"
                 Label:
-                    #id
+                    id:label_polynome_pace_out
                     text:"-"
                 Button:
                     text:"set"
                     on_press:root.pace_uptdate()
                 TextInput:
-                    id:label_polynome_pace_display
+                    id:label_polynome_pace_in
                     multiline:False
                     input_filter:"float"
             GridLayout:#Polynom
@@ -59,7 +62,7 @@
                 Label:
                     text:"Polynom"
                 Label:
-                    id:label_polynome_display
+                    id:label_polynome_in
                     text:"-"
         GridLayout:#Pricipal grid layout
             rows:6

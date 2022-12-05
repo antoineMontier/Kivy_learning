@@ -10,6 +10,10 @@ from Polynom import *
 
 kivy.require('1.9.0')
 
+class MenuScreen(Widget):
+    promptObject = TextInput()
+
+
 class MyGrid(Widget):
     python_polynome_min = ObjectProperty(None)
     python_polynome_max = ObjectProperty(None)
@@ -19,30 +23,36 @@ class MyGrid(Widget):
         super(MyGrid, self).__init__(**kwargs)
         self.p = Polynom()
         self.python_polynome_display.text = str(self.p)
-        self.python_polynome_min.text = str(self.p.min)
-        self.python_polynome_max.text = str(self.p.max)
-        self.python_polynome_pace.text = str(self.p.precision)
+        self.python_polynome_min_out.text = str(self.p.min)
+        self.python_polynome_max_out.text = str(self.p.max)
+        self.python_polynome_pace_out.text = str(self.p.precision)
 
     def min_uptdate(self):
         self.p.min = float(self.python_polynome_min.text)
-        self.python_polynome_min.text = str(self.p.min)
+        self.python_polynome_min.text = ""
+        self.python_polynome_min_out.text = str(self.p.min)
         
-
     def max_uptdate(self):
         self.p.max = float(self.python_polynome_max.text)
-        self.python_polynome_max.text = str(self.p.max)
+        self.python_polynome_max.text = ""
+        self.python_polynome_max_out.text = str(self.p.max)
 
     def pace_uptdate(self):
         self.p.precision = float(self.python_polynome_pace.text)
-        self.python_polynome_pace.text = str(self.p.precision)
+        self.python_polynome_pace.text = ""
+        self.python_polynome_pace_out.text = str(self.p.precision)
     
 
 class MyApp(App):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        
 
     def build(self):
         return MyGrid()
     
 
+if __name__ == '__main__':
+    MyApp().run()
 
-
-MyApp().run()
