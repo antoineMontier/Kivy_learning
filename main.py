@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
+from kivy.core.window import Window
 from parse import *
 from kivy.properties import ObjectProperty
 from Polynom import *
@@ -25,31 +26,30 @@ class MyGrid(Widget):
         super(MyGrid, self).__init__(**kwargs)
         self.prev_im = 0.0
         self.p = Polynom()
-        self.python_polynome_out.text = str(self.p)
-        self.python_polynome_min_out.text = str(self.p.min)
-        self.python_polynome_max_out.text = str(self.p.max)
-        self.python_polynome_pace_out.text = str(self.p.precision)
+        self.python_polynome_min_out.text = "min\n" + str(self.p.min)
+        self.python_polynome_max_out.text = "max\n" + str(self.p.max)
+        self.python_polynome_pace_out.text = "pace\n"+ str(self.p.precision)
 
     def min_uptdate(self):
         if(self.python_polynome_min_in.text == "" or self.python_polynome_min_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0', '-']):#error handling
             return
         self.p.min = float(self.python_polynome_min_in.text)
         self.python_polynome_min_in.text = ""
-        self.python_polynome_min_out.text = str(self.p.min)
+        self.python_polynome_min_out.text = "min\n" + str(self.p.min)
         
     def max_uptdate(self):
         if(self.python_polynome_max_in.text == "" or self.python_polynome_max_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0', '-']):#error handling
             return
         self.p.max = float(self.python_polynome_max_in.text)
         self.python_polynome_max_in.text = ""
-        self.python_polynome_max_out.text = str(self.p.max)
+        self.python_polynome_max_out.text = "max\n" + str(self.p.max)
 
     def pace_uptdate(self):
         if(self.python_polynome_pace_in.text == "" or self.python_polynome_pace_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
             return
         self.p.precision = float(self.python_polynome_pace_in.text)
         self.python_polynome_pace_in.text = ""
-        self.python_polynome_pace_out.text = str(self.p.precision)
+        self.python_polynome_pace_out.text = "pace\n"+ str(self.p.precision)
     
     def tangent_uptdate(self):
         if(self.python_polynome_tangent_in.text == "" or self.python_polynome_tangent_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
@@ -127,15 +127,15 @@ class MyGrid(Widget):
                     positive = True
 
         self.p.clean()
-        self.python_polynome_out.text = str(self.p)
-        self.python_polynome_derivate_out.text = str(self.p.derivate())
-        self.python_polynome_primitive_out.text = str(self.p.primitive())
+        self.python_polynome_out.text = "f(x) = " + str(self.p)
+        self.python_polynome_derivate_out.text = "f'(x) = " + str(self.p.derivate())
+        self.python_polynome_primitive_out.text = "F(x) = " + str(self.p.primitive())
         self.python_polynome_even_out.text = str(self.p.even())
         self.python_polynome_uneven_out.text = str(self.p.uneven())
 
     def show_roots(self):
         if(self.prev_im != self.p.evaluate(-0.23551569)):#avoid recalculation
-            self.python_polynome_roots_out.text = str(self.p.roots())
+            self.python_polynome_roots_out.text = "roots : " + str(self.p.roots())
             self.prev_im = self.p.evaluate(-0.23551569)
 
     def evaluation(self):
@@ -144,7 +144,7 @@ class MyGrid(Widget):
             return
         x = float(txt)
         self.python_polynome_im_in.text = ""
-        self.python_polynome_im_out.text = str(self.p.evaluate(x))
+        self.python_polynome_im_out.text = ") = " +  str(self.p.evaluate(x))
 
     def integral_calculation(self):
         a = self.python_polynome_a_in.text
@@ -159,11 +159,14 @@ class MyGrid(Widget):
 
 class MyApp(App):
 
+    button = [0.411, 0.47, 0.68]
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
 
     def build(self):
+        Window.clearcolor = (1, 0, 1, 1)#bg color
         return MyGrid()
     
 

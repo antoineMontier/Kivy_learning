@@ -5,8 +5,8 @@ class Polynom:
 
     def __init__(self):
         self._monoms = LinkedList()
-        self.min = -100
-        self.max = 100
+        self.min = -100.0
+        self.max = 100.0
         self.precision = 0.01
     def __str__(self):
         if(self._monoms.isEmpty()):
