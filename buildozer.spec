@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Random generator
+title = Polynom
 
 # (str) Package name
-package.name = Random_number_app
+package.name = Polynom_app
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -19,10 +19,10 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (let empty to not exclude anything)
-#source.exclude_exts = spec
+source.exclude_exts = spec,Polynom.py,Cell.py,LinkedList.py,Monom.py,README.md
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin, venv
+source.exclude_dirs = tests, bin, venv
 
 # (list) List of exclusions using pattern matching
 # Do not prefix with './'
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python3,kivy,parse
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

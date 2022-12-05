@@ -6,7 +6,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
-from parse import *
+from parse import parse
 from kivy.properties import ObjectProperty
 from Polynom import *
 
@@ -130,8 +130,8 @@ class MyGrid(Widget):
         self.python_polynome_out.text = "f(x) = " + str(self.p)
         self.python_polynome_derivate_out.text = "f'(x) = " + str(self.p.derivate())
         self.python_polynome_primitive_out.text = "F(x) = " + str(self.p.primitive())
-        self.python_polynome_even_out.text = str(self.p.even())
-        self.python_polynome_uneven_out.text = str(self.p.uneven())
+        self.python_polynome_even_out.text = "even :\n" + str(self.p.even())
+        self.python_polynome_uneven_out.text = "even :\n" + str(self.p.uneven())
 
     def show_roots(self):
         if(self.prev_im != self.p.evaluate(-0.23551569)):#avoid recalculation
