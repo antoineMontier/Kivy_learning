@@ -1,15 +1,18 @@
 <MyGrid>
     python_polynome_display: label_polynome_in
-    python_polynome_min: label_polynome_min_in
-    python_polynome_max: label_polynome_max_in
-    python_polynome_pace: label_polynome_pace_in
+    python_polynome_min_in: label_polynome_min_in
+    python_polynome_max_in: label_polynome_max_in
+    python_polynome_pace_in: label_polynome_pace_in
     python_polynome_min_out: label_polynome_min_out 
     python_polynome_max_out: label_polynome_max_out 
     python_polynome_pace_out: label_polynome_pace_out 
+    python_polynome_tangent_in: label_polynome_tangent_in
+    python_polynome_tangent_out: label_polynome_tangent_out
     GridLayout:
         size:root.width, root.height
         rows:2
         GridLayout:#first row containing MIN, MAX, PACE, POLYNOM(only display)
+            size_hint: 0.5, 0.2
             cols:4
             GridLayout:#MIN
                 cols:2
@@ -93,12 +96,14 @@
                 Label:
                     text:"tangent at a ="
                 TextInput:
+                    id:label_polynome_tangent_in
                     multiline:False
+                    input_filter:"float"
                 Button:
                     text:"OK"
-                    #on_press
+                    on_press:root.tangent_uptdate()
                 Label:
-                    #id
+                    id:label_polynome_tangent_out
                     text:"-"
             GridLayout:#integral calculation
                 cols:6

@@ -15,9 +15,7 @@ class MenuScreen(Widget):
 
 
 class MyGrid(Widget):
-    python_polynome_min = ObjectProperty(None)
-    python_polynome_max = ObjectProperty(None)
-    python_polynome_pace = ObjectProperty(None)
+    
 
     def __init__(self, **kwargs):
         super(MyGrid, self).__init__(**kwargs)
@@ -28,19 +26,32 @@ class MyGrid(Widget):
         self.python_polynome_pace_out.text = str(self.p.precision)
 
     def min_uptdate(self):
-        self.p.min = float(self.python_polynome_min.text)
-        self.python_polynome_min.text = ""
+        if(self.python_polynome_min_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
+            return
+        self.p.min = float(self.python_polynome_min_in.text)
+        self.python_polynome_min_in.text = ""
         self.python_polynome_min_out.text = str(self.p.min)
         
     def max_uptdate(self):
-        self.p.max = float(self.python_polynome_max.text)
-        self.python_polynome_max.text = ""
+        if(self.python_polynome_max_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
+            return
+        self.p.max = float(self.python_polynome_max_in.text)
+        self.python_polynome_max_in.text = ""
         self.python_polynome_max_out.text = str(self.p.max)
 
     def pace_uptdate(self):
-        self.p.precision = float(self.python_polynome_pace.text)
-        self.python_polynome_pace.text = ""
+        if(self.python_polynome_pace_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
+            return
+        self.p.precision = float(self.python_polynome_pace_in.text)
+        self.python_polynome_pace_in.text = ""
         self.python_polynome_pace_out.text = str(self.p.precision)
+    
+    def tangent_uptdate(self):
+        if(self.python_polynome_tangent_in.text[0] not in ['9', '8', '7', '6', '5', '4', '3', '2', '1', '0']):#error handling
+            return
+        a = float(self.python_polynome_tangent_in.text)
+        #self.python_polynome_tangent_in.text = ""#don't clear input box
+        self.python_polynome_tangent_out.text = str(self.p.tangent(a))
     
 
 class MyApp(App):
