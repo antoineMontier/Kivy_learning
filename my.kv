@@ -36,6 +36,7 @@
                     rows:1
                     Label:
                         id:label_polynome_min_out
+                        color:app.on_layout_font_color
                         text:"Min"
                         background_color: 0, 1, 0, 1
                         canvas.before:
@@ -49,12 +50,15 @@
                     cols:2
                     rows:1
                     RoundedButton:
+                        color:app.on_button_font_color
                         text:"set"
                         on_press:root.min_uptdate()
                     TextInput:
                         id:label_polynome_min_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
             GridLayout:#MAX
                 padding:10
                 cols:1
@@ -64,8 +68,9 @@
                     rows:1
                     Label:
                         id:label_polynome_max_out
+                        color:app.on_layout_font_color
                         text:"Max"
-                        background_color: 1, 0, 0, 1
+                        background_color: app.label_color
                         canvas.before:
                             Color:
                                 rgba: self.background_color
@@ -77,13 +82,16 @@
                     cols:2
                     rows:1
                     RoundedButton:
-
+                        color:app.on_button_font_color
                         text:"set"
                         on_press:root.max_uptdate()
                     TextInput:
                         id:label_polynome_max_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
+
                     
             GridLayout:#PACE
                 cols:1
@@ -94,8 +102,9 @@
                     rows:1
                     Label:
                         id:label_polynome_pace_out
+                        color:app.on_layout_font_color
                         text:"PACE"
-                        background_color: 1, 0, 0, 1
+                        background_color: app.label_color
                         canvas.before:
                             Color:
                                 rgba: self.background_color
@@ -107,12 +116,15 @@
                     cols:2
                     rows:1
                     RoundedButton:
+                        color:app.on_button_font_color
                         text:"set"
                         on_press:root.pace_uptdate()
-                    TextInput:
+                    TextInput:    
                         id:label_polynome_pace_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
         GridLayout:#Pricipal grid layout
 
             rows:7
@@ -121,6 +133,7 @@
                 
                 cols:3
                 Label:
+                    color:app.on_bg_font_color
                     text:"f(x) ="
                     size_hint:{.2, 1}  
                 GridLayout:
@@ -130,13 +143,15 @@
                     TextInput:
                         id:label_polynome_in
                         multiline:False
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
                 GridLayout:
                     size_hint: (.2, .01)
                     rows:1
                     cols:1
                     padding:(5, 30, 5, 30)
                     RoundedButton:
-                        
+                        color:app.on_button_font_color
                         text:"OK"
                         #background_color:app.button
                         #background_normal:''
@@ -146,8 +161,9 @@
                 cols:1
                 Label:
                     id:label_polynome_out
+                    color:app.on_layout_font_color
                     text:"polynom"
-                    background_color: 0, 0, 1, 1
+                    background_color: app.label_color
                     canvas.before:
                         Color:
                             rgba: self.background_color
@@ -157,8 +173,9 @@
                             radius: [15]
                 Label:
                     id:label_polynome_derivate_out
+                    color:app.on_layout_font_color
                     text:"derivate"
-                    background_color: 1, 0, 0, 1
+                    background_color: app.label_color
                     canvas.before:
                         Color:
                             rgba: self.background_color
@@ -168,8 +185,9 @@
                             radius: [15]
                 Label:
                     id:label_polynome_primitive_out
+                    color:app.on_layout_font_color
                     text:"primitive"
-                    background_color: 0, 1, 0, 1
+                    background_color: app.label_color
                     canvas.before:
                         Color:
                             rgba: self.background_color
@@ -186,6 +204,7 @@
                 rows:1
                 Label:
                     size_hint: {.5, 1}
+                    color:app.on_bg_font_color
                     text:"tangent at a ="
                     
                 GridLayout:
@@ -197,7 +216,10 @@
                         id:label_polynome_tangent_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
                     RoundedButton:
+                        color:app.on_button_font_color
                         text:"OK"
                         on_press:root.tangent_uptdate()
                 GridLayout:
@@ -206,8 +228,9 @@
                     padding:(5, 30, 5, 30)
                     Label:
                         id:label_polynome_tangent_out
+                        color:app.on_layout_font_color
                         text:"-"
-                        background_color: 0, 0, 1, 1
+                        background_color: app.label_color
                         canvas.before:
                             Color:
                                 rgba: self.background_color
@@ -223,21 +246,28 @@
                     cols:6
                     Label:
                         size_hint:{.5, 1}
+                        color:app.on_bg_font_color
                         text:"integral\nbetween"
                     TextInput:
                         size_hint:{.5, 1}
                         id:label_polynome_a_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
                     Label:
                         size_hint:{.3, 1}
+                        color:app.on_bg_font_color
                         text:"and"
                     TextInput:
                         size_hint:{.5, 1}
                         id:label_polynome_b_in
                         multiline:False
                         input_filter:"float"
+                        foreground_color: app.text_input_fg_color
+                        background_color: app.text_input_bg_color
                     RoundedButton:
+                        color:app.on_button_font_color
                         size_hint:{.5, 1}
                         text:"OK"
                         on_press:root.integral_calculation()
@@ -246,9 +276,10 @@
                         cols:1
                         padding:(5, 0, 5, 0)
                         Label:
+                            color:app.on_layout_font_color
                             id:label_polynome_integral_out
                             text:"-"
-                            background_color: 0, 0, 1, 1
+                            background_color: app.label_color
                             canvas.before:
                                 Color:
                                     rgba: self.background_color
@@ -269,8 +300,9 @@
                         Label:
                             id:label_roots
                             size_hint:0.5, 1
+                            color:app.on_layout_font_color
                             text:"roots"
-                            background_color: 0, 0, 1, 1
+                            background_color: app.label_color
                             canvas.before:
                                 Color:
                                     rgba: self.background_color
@@ -279,6 +311,7 @@
                                     pos: self.pos
                                     radius: [15]
                     RoundedButton:
+                        color:app.on_button_font_color
                         size_hint:0.1, 1
                         text:"Calc."
                         on_press:root.show_roots()
@@ -292,6 +325,7 @@
                     GridLayout:
                         cols:4
                         Label:
+                            color:app.on_bg_font_color
                             text:"f("
                             size_hint:{.2, 1}
                         GridLayout:
@@ -303,11 +337,15 @@
                                 id:label_polynome_im_in
                                 multiline: False
                                 input_filter:'float'
+                                foreground_color: app.text_input_fg_color
+                                background_color: app.text_input_bg_color
                         Label:
                             size_hint:{.5, 1}
                             id:label_polynome_im_out
+                            color:app.on_bg_font_color
                             text:") = -"
                         RoundedButton:
+                            color:app.on_button_font_color
                             size_hint:{.3, .2}
                             text:"Go"
                             on_press:root.evaluation()
@@ -318,8 +356,9 @@
                         rows:1
                         Label:
                             id:label_polynome_even_out
+                            color:app.on_layout_font_color
                             text:"even: -"
-                            background_color: 0, 0, 1, 1
+                            background_color: app.label_color
                             canvas.before:
                                 Color:
                                     rgba: self.background_color
@@ -334,8 +373,9 @@
                         rows:1
                         Label:
                             id:label_polynome_uneven_out
+                            color:app.on_layout_font_color
                             text:"uneven: -"
-                            background_color: 0, 0, 1, 1
+                            background_color: app.label_color
                             canvas.before:
                                 Color:
                                     rgba: self.background_color
@@ -349,7 +389,7 @@
 	background_normal: ''
 	canvas.before:
 		Color:
-			rgba: 0.411, 0.47, 0.68, 1
+			rgba: app.button_color
 		RoundedRectangle:
 			size: self.size
 			pos: self.pos

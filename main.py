@@ -160,6 +160,13 @@ class MyGrid(Widget):
 class MyApp(App):
 
     button = [0.411, 0.47, 0.68]
+    on_bg_font_color = [0, 1, 0, 1]
+    on_button_font_color = [1, 1, 0, 1]
+    on_layout_font_color = [1, 0, 1, 1]
+    label_color = [0, 0, 0, 1]
+    text_input_fg_color = [0, 1, 0.5, 1]
+    text_input_bg_color = [0.5, 0, 0.5, 1]
+    button_color = [0.5, 0, 0.5, 1]
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
