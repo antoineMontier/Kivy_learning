@@ -5,7 +5,12 @@ class Monom:
         self._coef = coefficient
         self._pow = power
     def __str__(self):
-        return "%fx^%d" % (self._coef, self._pow)
+        if(self._pow > 1):
+            return "%.2fx^%d" % (self._coef, self._pow)
+        elif(self._pow > 0):
+            return "%.2fx" % (self._coef)
+        else:
+            return "%.2f" % (self._coef)
     def __mul__(self, toAdd):
         if(self._coef == 0 or toAdd.get_coef() == 0):
             return Monom(0, 0)

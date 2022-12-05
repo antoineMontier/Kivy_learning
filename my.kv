@@ -1,5 +1,6 @@
 <MyGrid>
-    python_polynome_display: label_polynome_in
+    python_polynome_in: label_polynome_in
+    python_polynome_out: label_polynome_out
     python_polynome_min_in: label_polynome_min_in
     python_polynome_max_in: label_polynome_max_in
     python_polynome_pace_in: label_polynome_pace_in
@@ -60,24 +61,22 @@
                     id:label_polynome_pace_in
                     multiline:False
                     input_filter:"float"
-            GridLayout:#Polynom
-                rows:2
-                Label:
-                    text:"Polynom"
-                Label:
-                    id:label_polynome_in
-                    text:"-"
         GridLayout:#Pricipal grid layout
-            rows:6
+            rows:7
+            Label:
+                id:label_polynome_out
+                text:"-"
+                font_size:18
             GridLayout:#polynom modifications
                 cols:3
                 Label:
                     text:"Polynom :"
                 TextInput:
+                    id:label_polynome_in
                     multiline:False
                 Button:
                     text:"ok"
-                    #on_press
+                    on_press:root.polynom_uptdate()
             GridLayout:#derivate and integral display
                 rows:2
                 cols:2

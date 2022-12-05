@@ -16,7 +16,12 @@ class Polynom:
             if(self._monoms.get(i).get_coef() >= 0):
                 s += " + " + self._monoms.get(i).__str__() 
             else:
-                s += " - " + (- self._monoms.get(i).get_coef()).__str__() + "x^" + self._monoms.get(i).get_pow().__str__()
+                if(self._monoms.get(i).get_pow() > 1):
+                    s += " - " + (- self._monoms.get(i).get_coef()).__str__() + "x^" + self._monoms.get(i).get_pow().__str__()
+                elif(self._monoms.get(i).get_pow() > 0):
+                    s += " - " + (- self._monoms.get(i).get_coef()).__str__() + "x"
+                else:
+                    s += " - " + (- self._monoms.get(i).get_coef()).__str__()
         return s
     def add(self, coef, pow):
         #first, assert that the polynomial need a new monom (if no other one has the same power as the one in parameter)
@@ -25,6 +30,8 @@ class Polynom:
                 self._monoms.get(i).set_coef(coef + self._monoms.get(i).get_coef())
                 return
         self._monoms.pushTail(Monom(coef, pow))
+    def reset(self):
+        self._monoms = LinkedList()
     def clean(self):
         if(self._monoms.isEmpty()):
             return
