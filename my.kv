@@ -17,6 +17,8 @@
     python_polynome_a_in: label_polynome_a_in
     python_polynome_b_in: label_polynome_b_in
     python_polynome_integral_out: label_polynome_integral_out
+    python_polynome_even_out: label_polynome_even_out
+    python_polynome_uneven_out: label_polynome_uneven_out
 
     GridLayout:
         size:root.width, root.height
@@ -166,12 +168,12 @@
                     Label:
                         text:"even"
                     Label:
-                        #id
+                        id:label_polynome_even_out
                         text:"-"
                 GridLayout:
                     rows:2
                     Label:
                         text:"uneven"
                     Label:
-                        #id
+                        id:label_polynome_uneven_out
                         text:"-"

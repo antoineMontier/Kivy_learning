@@ -112,7 +112,25 @@ class Polynom:
         if(self.length() == 0):
             return 0
         else:
-            return self.primitive().evaluate(y) - self.primitive().evaluate(x)    
+            return self.primitive().evaluate(y) - self.primitive().evaluate(x)
+    def even(self):
+        if(self.min*self.max > 0):#no calculs if zero isn't between min and max
+            return
+        i = - min(abs(self.min), abs(self.max))
+        while(i < min(abs(self.max), abs(self.min))):
+            if(abs(self.evaluate(i) - self.evaluate(-i)) > self.precision):
+                return False
+            i+=self.precision    
+        return True
+    def uneven(self):
+        if(self.min*self.max > 0):#no calculs if zero isn't between min and max
+            return
+        i = - min(abs(self.min), abs(self.max))
+        while(i < min(abs(self.max), abs(self.min))):
+            if(abs(self.evaluate(i) + self.evaluate(-i)) > self.precision):
+                return False
+            i+=self.precision    
+        return True
 
     def tangent(self, a):#y = f'(a)(x-a) + f(a)
         res = Polynom()
